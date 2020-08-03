@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PhoneBook"
+    }
+  },
+  "defaultProject": "PhoneBook",
+  "cli": {
+    "analytics": "1a9f066b-5843-4dd4-ac06-b3c8ec18c06f"
+  }
 }

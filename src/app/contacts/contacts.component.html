@@ -1,0 +1,32 @@
+<section class="alert alert-success">
+<input style="width: 50%;" list="list" class="alert alert-success" [(ngModel)]="s" placeholder="Search contact by name">
+<datalist id="list">
+<option  *ngFor="let contact of contacts" value={{contact.name}}></option>
+</datalist>
+<button class="btn btn-primary" (click)="search()">Search</button>
+<div *ngIf="sea">
+    <p><b>Search Result</b></p>
+    <p *ngIf="content">No result found</p>
+<p style="border-bottom: solid;" *ngFor="let contact of searched">
+    <span style="font-size: large;">{{contact.name}}</span><br/>
+   <span class="glyphicon glyphicon-earphone"></span> {{contact.num}} <button id="del" class="glyphicon glyphicon-trash" (click)="delete(contact)"></button>
+    </p>
+</div>
+
+<article *ngFor="let contact of contacts">
+    <span style="font-size: large;">{{contact.name}}</span><br/>
+<span class="glyphicon glyphicon-earphone"></span> {{contact.num}}   <button id="del" class="glyphicon glyphicon-trash" (click)="delete(contact)"></button>
+<button id="upd" (click)="display(contact.name)" class="glyphicon glyphicon-wrench"></button>
+
+
+</article>
+<div  *ngIf="disp">
+    <label>Name:</label>
+    <input class="alert alert-success" #nam type="text" /><br/>
+    <label>Number:</label>
+    <input  class="alert alert-success" #num type="number" />
+    <button style="margin: 3px;" class="btn btn-primary" (click)="update(nam.value,num.value)">Create</button>
+</div>
+</section>
+
+

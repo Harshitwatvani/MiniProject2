@@ -1,0 +1,12 @@
+<section  class="alert alert-success">
+<span>Contacts<button style="float: right;" (click)="display()" class="btn btn-primary">Add Contact</button></span>
+<div  *ngIf="disp">
+    <label>Name:</label>
+    <input class="alert alert-success" #nam type="text"  [(ngModel)]="contact.name"/><br/>
+    <label>Number:</label>
+    <input  class="alert alert-success" #num type="number" [(ngModel)]="contact.num"/>
+    <button style="margin: 3px;" class="btn btn-primary" (click)="add()">Create</button>
+</div>
+</section>
+<app-contacts></app-contacts>
+
